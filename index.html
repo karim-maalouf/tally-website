@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tally – Count Everything</title>
-  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="icon" type="image/png" href="icon.png" id="favicon" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -501,6 +501,33 @@
 </footer>
 
 <script>
+  // Rounded favicon
+  (function() {
+    const img = new Image();
+    img.src = 'icon.png';
+    img.onload = function() {
+      const size = 64;
+      const radius = size * 0.22;
+      const canvas = document.createElement('canvas');
+      canvas.width = canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      ctx.beginPath();
+      ctx.moveTo(radius, 0);
+      ctx.lineTo(size - radius, 0);
+      ctx.quadraticCurveTo(size, 0, size, radius);
+      ctx.lineTo(size, size - radius);
+      ctx.quadraticCurveTo(size, size, size - radius, size);
+      ctx.lineTo(radius, size);
+      ctx.quadraticCurveTo(0, size, 0, size - radius);
+      ctx.lineTo(0, radius);
+      ctx.quadraticCurveTo(0, 0, radius, 0);
+      ctx.closePath();
+      ctx.clip();
+      ctx.drawImage(img, 0, 0, size, size);
+      document.getElementById('favicon').href = canvas.toDataURL('image/png');
+    };
+  })();
+
   // Device-aware download button
   function getStoreUrl() {
     const ua = navigator.userAgent || navigator.vendor || window.opera;
