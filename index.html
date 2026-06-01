@@ -172,8 +172,8 @@
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      gap: 16px;
-      max-width: 1100px;
+      gap: 14px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -185,13 +185,13 @@
     .screenshot-wrap:hover { transform: translateY(-8px); }
 
     .screenshot-wrap img {
-      width: 175px;
+      width: 148px;
       border-radius: 28px;
       box-shadow: 0 24px 60px rgba(0,0,0,0.6);
       display: block;
     }
 
-    .screenshot-wrap.center img { width: 200px; }
+    .screenshot-wrap.center img { width: 172px; }
 
     /* ── FEATURES ── */
     .features {
@@ -366,9 +366,19 @@
     @media (max-width: 640px) {
       nav { padding: 16px 20px; }
       .hero { padding: 72px 20px 48px; }
-      .screenshots-inner { gap: 10px; }
-      .screenshot-wrap img { width: 130px; }
-      .screenshot-wrap.center img { width: 150px; }
+      .screenshots {
+        padding: 40px 0 60px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .screenshots-inner {
+        gap: 10px;
+        justify-content: flex-start;
+        padding: 0 24px;
+        width: max-content;
+      }
+      .screenshot-wrap img { width: 120px; }
+      .screenshot-wrap.center img { width: 138px; }
       .support-card { padding: 28px 20px; }
       footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
     }
@@ -412,16 +422,22 @@
       <img src="screenshot-1.png" alt="Counters screen" />
     </div>
     <div class="screenshot-wrap">
-      <img src="screenshot-2.png" alt="Counter detail" />
+      <img src="screenshot-2.png" alt="Friends screen" />
+    </div>
+    <div class="screenshot-wrap">
+      <img src="screenshot-3.png" alt="Friend counters" />
     </div>
     <div class="screenshot-wrap center">
-      <img src="screenshot-3.png" alt="Charts screen" />
+      <img src="screenshot-4.png" alt="Edit counter" />
     </div>
     <div class="screenshot-wrap">
-      <img src="screenshot-4.png" alt="Friends screen" />
+      <img src="screenshot-5.png" alt="Counter detail" />
     </div>
     <div class="screenshot-wrap">
-      <img src="screenshot-5.png" alt="Widgets screen" />
+      <img src="screenshot-6.png" alt="Charts screen" />
+    </div>
+    <div class="screenshot-wrap">
+      <img src="screenshot-7.png" alt="Widgets screen" />
     </div>
   </div>
 </section>
@@ -450,6 +466,16 @@
       <div class="feature-icon"><i class="ph-bold ph-squares-four"></i></div>
       <h3>Home & Lock Screen Widgets</h3>
       <p>Put counters on your home or lock screen. Increment without even opening the app.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="ph-bold ph-timer"></i></div>
+      <h3>Automations</h3>
+      <p>Set a schedule and let Tally count for you. Counters can increment automatically on any cadence you choose.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="ph-bold ph-cloud"></i></div>
+      <h3>Cloud Sync</h3>
+      <p>Sign up to keep your counters safe and synced. Your data is backed up automatically — never lose a count.</p>
     </div>
   </div>
 </section>
